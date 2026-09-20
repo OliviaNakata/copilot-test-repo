@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+  
+        <!-- Add these Google Font links -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    
+        <!-- Add Bootstrap Icons stylesheet -->
+       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+      
+        <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+             @font-face { 
+            font-family: 'Norwester'; 
+            font-style: normal; 
+            font-weight: 400; 
+            src: url(https://cdn.jsdelivr.net/fontsource/fonts/norwester@latest/latin-400-normal.woff2) format('woff2'), 
+                 url(https://cdn.jsdelivr.net/fontsource/fonts/norwester@latest/latin-400-normal.woff) format('woff'); 
+             }
+             @keyframes header {
+                0%{ 
+                    opacity: 0;
+                    transform: translateY(-90px);
+                }
+                50%{
+                    opacity: 1;
+        
+                    transform: translateY(0px);
+                }
+             }
+
+             @keyframes right-arrow {
+                 0%{ 
+                   
+                    transform: translateX(300%);
+                }
+                50%{
+                    
+                    transform: translateX(0%);
+                }
+             }
+
+              @keyframes left-arrow {
+                 0%{ 
+                  
+                    transform: translateX(-300%);
+                }
+                50%{
+                    
+                    transform: translateX(0%);
+                }
+             }
+             .right{
+                 animation-name: right-arrow;
+                animation-duration: 1s;
+                animation-timing-function: ease-out;
+                animation-delay: 6s;
+                animation-fill-mode: both;
+                animation-iteration-count: 1;
+             }
+              .left{
+                 animation-name: left-arrow;
+                animation-duration: 1s;
+                animation-timing-function: ease-out;
+                animation-delay: 6s;
+                animation-fill-mode: both;
+                animation-iteration-count: 1;
+             }
+
+            #header {
+                position: fixed; 
+                top: 0px;
+                width: 100%; 
+                height: 90px;
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+                z-index: 2000;
+
+                animation-name: header;
+                animation-duration: 1s;
+                animation-timing-function: ease-out;
+                animation-delay: 6s;
+                animation-fill-mode: both;
+                animation-iteration-count: 1;
+                animation-play-state: running;
+                
+            }
+            .header-content {
+                width: 100%;
+                height: auto;
+                background: transparent;
+                padding: 10px 0 0 0;
+            }
+            .screen-reader-text {
+                border: 0;
+                clip: rect(1px, 1px, 1px, 1px);
+                clip-path: inset(50%);
+                height: 1px;
+                margin: -1px;
+                overflow: hidden;
+                padding: 0;
+                position: absolute !important;
+                width: 1px;
+                word-wrap: normal  !important;
+                word-break: normal;
+            }
+            .branding{
+                height: 60px;
+                width: 60px;
+                background-color: transparent;
+                display: inline-block;
+                background-image: url('logo.png');
+                background-size: contain; 
+                background-position: center;
+                margin: 10px;
+                background-repeat: no-repeat;
+
+            }
+          .navbar-nav .nav-link{
+            font-family: 'Fredoka', sans-serif; /* Change to your preferred font */
+            font-weight: 900;
+            margin-left: 20px
+            }
+            .navbar-nav, #social, #header{
+               background-color: transparent;; 
+            }
+            #social i, .navbar-nav, .nav-link,.navbar-toggler{
+                color: rgb(255, 255, 255) !important;
+            }
+            h1, .bi-arrow-left, .bi-arrow-right{
+                color: white !important;
+            } 
+            #social #header{
+                float: none;
+                display: block;
+            }
+            #social{
+                padding: 10px;
+                margin-right: 3px;
+            }
+            #social i{
+                padding: 3px;
+                margin: 3px 20px 1px;
+                font-size: 2rem;
+            }
+            #social a {
+                 text-decoration: none; /* This removes the underline! */
+            }
+            .header-links {
+                display: inline-block;
+                text-align: right;
+                margin: 0;
+            }
+            .main{
+                margin: 0;
+                padding: 0;
+                border: 0;
+                font: inherit;
+                vertical-align: baseline;
+                bottom: 0; 
+                left: 0; 
+                right: 0; 
+                top: 0;
+            }
+            @keyframes title{
+                0%{
+                  scale: 0.4;
+                  opacity: 0;
+                }
+                60%{
+                  scale: 1;
+                  opacity: 1;
+                }
+            }
+            #title{
+                position: fixed;
+                top:53%;
+                left:50%;
+                text-align: center;
+                align-items: center;
+                transform: translate(-50%, -50%);
+                z-index: 300;
+                width: 100%;
+
+               
+
+            }
+            #title h1{
+                font-weight: 400; 
+                font-family: 'Norwester', 'Arial Black', sans-serif; 
+                margin: 0; 
+                display: inline-block;
+
+                animation-name: title;
+                animation-duration: 1s;
+                animation-timing-function: ease-out;
+                animation-delay: 5s;
+                animation-fill-mode: both;
+                animation-iteration-count: 1;
+                visibility: visible;
+            }
+            .slider{
+                position: fixed;
+                padding: 1.5rem 1.5rem 2rem;
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                z-index: 999;
+            }
+            .bi-arrow-left, .bi-arrow-right {
+                font-size: 120%; 
+                cursor: pointer; /* Changes mouse cursor to pointer on hover */
+                pointer-events: auto;
+                transition: 0.4s ease-in;
+            }
+  /* 2. THE TRAIN: Force-clearing all Bootstrap default paddings and margins */
+           
+             @keyframes slides{
+                0%{
+                    transform: translateX(0%);
+                }
+                34%{
+                    transform: translateX(-100%);
+                }
+                67%{
+                    transform: translateX(-200%);
+                }
+
+             }
+            .carousel-track {
+                display: flex;
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                left: 0;
+                top: 0;
+                transition: 1s ease-in-out; 
+                transform: translateX(-200%);
+
+                animation-name: slides;
+                animation-duration: 5500ms;
+                animation-timing-function: ease;
+                animation-delay: 900ms;
+                animation-fill-mode: backwards;
+                animation-iteration-count: 1;
+
+                
+            }
+
+/* 3. THE TRAIN CARS: Make sure the container holds its ground */
+            .carousel-track li {
+                min-width: 100vw; 
+                max-width: 100vw;
+                height: 100vh;
+                flex-shrink: 0;   
+
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+            }
+
+            /* 4. THE IMAGES: Absolute centring lock */
+            #tubular-image {
+                border: 1px solid #fff;
+                width: 100vw;
+                height: 100vh;
+                object-fit: cover !important;             
+                object-position: center center !important; 
+                opacity: 0.6;
+                display: block;
+            }
+             @media screen and (max-width: 766px){
+                #social i{
+                    margin: 3px;
+                }
+            }
+
+
+        </style>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <title>BHS Popcorn Club</title>
+    </head>
+    <body style="margin: 0; padding: 0; background-color:  #5b2934; overflow-x: hidden; position:relative">
+        <div class = "main">
+            <section id="tubular-container" onclick="fullmode()">
+                <ul class="carousel-track" role="presentation" >
+                    <li class="first" data-qa-qualifier="slider-spot-current-universe"><img id="tubular-image" src="popcornclub1.jpg"></li>
+                    <li class="second"><img id="tubular-image" src="popcornclub2.jpg"></li>
+                    <li class="third"><img id="tubular-image" src="popcornclub3.jpg"></li>
+                    <li class="fouth"><img id="tubular-image" src="popcornclub4.jpg"></li>
+                    <li class="fifth"><img id="tubular-image" src="popcornclub5.jpg"></li>
+                    <li class="sixth"><img id="tubular-image" src="popcornclub6.jpg"></li>
+                    <li class="seventh"><img id="tubular-image" src="popcornclub7.jpg"></li>
+                </ul>
+            </section>
+            <div id="title">
+                <ul class="slider">
+                    <li class="left" aria-label = "left" onclick="slideToLeft(event)"><i class="bi bi-arrow-left"></i></li>
+                    <li class="right" aria-label = "right" onclick="slideToRight(event)"><i class="bi bi-arrow-right"></i></li>
+                </ul>
+                <section>
+                    <style>
+                        #title h1{
+                        font-size: 70px;
+                        letter-spacing: -2px;
+                        transform: scaleY(1.3);
+                        }
+                        @media screen and (max-width: 1000px){
+                            #title h1{line-height: inherit; font-size:40px; letter-spacing: 0px;}
+                        }
+                    </style>
+                    <h1>
+                    <b>BHS Popcorn Club</b>
+                    </h1>
+                </section>
+            </div>
+        </div>
+        <header id = "header">
+            <nav class="header-content navbar navbar-expand-md" role="navigation">
+                <a href = "homepage.html" class = "branding" aria-label = "Popcorn Club logo that links to the homepage">
+                    <span class = "screen-reader-text">Popcorn Club</span>
+                </a>
+                <div class=" navbar-collapse" id="navbarNavAltMarkup">
+                    <ul class="navbar-nav">
+                        <li><a class="nav-link" href="highlights.html">Highlights</a></li>
+                        <li><a class="nav-link" href="calender.html">Calender</a></li>
+                        <li><a class="nav-link" href="aboutUs.html">About Us</a></li>
+                    </ul> 
+                    <!-- Social Media Links -->
+                    <section id="social" role="list" class="ms-auto d-flex align-items-center">
+                        <a href="https://www.instagram.com/bhspopcorn/" target="_blank">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@BhsPopcornn/" target="_blank">
+                            <i class="bi bi-youtube"></i>
+                        </a>
+                    </section>
+               </div>
+            </nav>   
+        </header>
+         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
+            <script src="homepage.js"></script>
+    </body>
+</html>

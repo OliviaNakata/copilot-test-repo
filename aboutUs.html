@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <!-- Add these Google Font links -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    
+        <!-- Add Bootstrap Icons stylesheet -->
+       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+      
+        <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+             @font-face { 
+            font-family: 'Norwester'; 
+            font-style: normal; 
+            font-weight: 400; 
+            src: url(https://cdn.jsdelivr.net/fontsource/fonts/norwester@latest/latin-400-normal.woff2) format('woff2'), 
+                 url(https://cdn.jsdelivr.net/fontsource/fonts/norwester@latest/latin-400-normal.woff) format('woff'); 
+             }
+
+            #header {
+                position: fixed !important;
+                top: 0;
+                width: 100%;
+                height: 90px;
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+                z-index: 2000;
+                background-color: #cad2ff;
+            }
+            .header-content {
+                width: 100%;
+                height: auto;     
+                padding: 10px 0 0 0;
+            }
+            .screen-reader-text {
+                border: 0;
+                position: absolute !important;
+                clip: rect(1px, 1px, 1px, 1px);
+                clip-path: inset(50%);
+                height: 1px;
+                margin: -1px;
+                overflow: hidden;
+                padding: 0;
+                width: 1px;
+                word-wrap: normal  !important;
+                word-break: normal;
+            }
+            .branding{
+                height: 60px;
+                width: 60px;
+                background-color: transparent;
+                display: inline-block;
+                background-image: url('logo.png');
+                background-size: contain; 
+                background-position: center;
+                margin: 10px;
+                background-repeat: no-repeat;
+
+            }
+          .navbar-nav .nav-link{
+            font-family: 'Fredoka', sans-serif; /* Change to your preferred font */
+            font-weight: 900;
+            margin-left: 20px
+            }
+            .navbar-nav, #social, #header{
+               background-color: transparent; /*#4f66d7*/
+            }
+            #social i, .navbar-nav, .nav-link{
+                color: black!important;
+            }
+            #social, #header{
+                float: none;
+                display: block;
+            }
+            #social{
+                padding: 10px;
+                margin-right: 3px;
+            }
+            #social i{
+                padding: 3px;
+                margin: 3px 20px 1px;
+                font-size: 2rem;
+            }
+            #social a {
+                 text-decoration: none; /* This removes the underline! */
+            }
+            .header-links {
+                display: inline-block;
+                text-align: right;
+                margin: 0;
+            }
+            .main{
+                margin: 0;
+                padding: 0;
+                border: 0;
+                font: inherit;
+                vertical-align: baseline;
+                bottom: 0; 
+                left: 0; 
+                right: 0; 
+                top: 0;
+            }
+             .title{
+                width: 100%;
+                transform: translate(0%, 95px);
+
+            }
+            h3,h4{
+                font-family: 'Fredoka', sans-serif;
+            }
+            h1, h2{
+                font-family: 'Norwester', 'Arial Black', sans-serif;
+            }
+            h1{
+                text-align: center;
+                display: block;
+                font-size: 45px !important; 
+                margin: 30px;
+                padding: 10px;
+               
+            }
+            h2{
+                font-weight: bold !important;  
+                margin: 40px !important;
+                transform: translateY(50px)!important; 
+                color: #2D6EFF !important;
+            }
+            #heading{
+                display: block;
+                margin-bottom: 10px;
+                text-align: center;
+                /*border: 3px solid black;*/
+                
+            }
+            .aboutUs{
+                font-weight: bold;
+                background-image:
+                    radial-gradient(closest-corner circle at 35% 42%, #65bbc59f, #2D6EFF);
+                background-clip: text;
+                color: transparent;
+            }
+            .content{
+                display: block;
+                transform: translateY(100px);
+                padding:0px;
+                /*border: 10px solid #000;*/
+            }
+            video{
+              width: 63%;
+              min-width: 450px;
+              border:10px solid #7689f3;
+              border-radius: 5px;
+            }
+
+            #go-video{
+                display: flex;
+                margin: 10px;
+                justify-content: space-between;
+    
+            }
+            p {
+               text-align: left;
+               font-size: 15px;
+               font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, sans-serif;
+               margin: 10px;
+               padding: 5px;
+            }
+            .description{
+              display: block !important;
+              max-width: 47%;
+            }
+
+            .miji-description::after{
+                content: "";
+                left: 50%;
+                position: absolute;
+                 border-left: 5px solid transparent;
+                 border-right: 5px solid transparent;
+                border-bottom: 5px solid #DCF8C6;
+                scale: 0;
+                opacity: 0;
+                transition: scale 200ms ease .2s;
+                transform-origin: bottom;
+
+            }
+             .nanami-description::after{
+                content: "";
+                left: 50%;
+                position: absolute;
+                 border-left: 5px solid transparent;
+                 border-right: 5px solid transparent;
+                border-bottom: 5px solid #DCF8C6;
+                scale: 0;
+                opacity: 0;
+                transition: scale 200ms ease .2s;
+                transform-origin: bottom;
+
+            }
+            /*.nanami-description, .miji-description{
+                display: none;
+            }
+            .nanami:hover .nanami-description{
+                display: block;
+            }
+            .miji:hover .miji-description{
+                display: block;
+            }*/
+
+              #request{
+                margin-top: 100px;
+                
+            }
+
+@media screen and (max-width: 1000px){
+                             #go-video{display: block;}
+                             video{display: block; margin-left:auto; margin-right: auto;}
+                             .content{margin:5px;}
+                             .description{max-width:100%;}
+                             p{margin: 0;}
+                              .google-form{ width: 100%; margin: 0 !important; padding: 0px; border: 1px solid #7689f3 !important;}
+}
+            .video-description{
+                font-size: 12px;
+                color: #2A63B2;
+            }
+            #leaders{
+                margin: 30px;
+                margin-top: 10%;
+                display: flex;
+                /*border: 3px solid #000;*/
+            }
+            .nanami{
+                scale: 0;
+                opacity: 0.3;
+                /*animation: scrolling linear;
+                animation-timeline: view();
+                animation-range: entry 0% cover 50%;*/
+                display:block;
+                width: 50%;
+                text-align: center; 
+                margin-right: 10px;  
+                /*border: 3px solid #000;  */
+            }
+            .miji{
+                /*animation: scrolling2 linear;
+                animation-timeline: view();
+                animation-range: entry 0% cover 50%;*/
+                scale: 0;
+                opacity: 0.3;
+                display:block;
+                width:50%;
+                text-align: center;
+
+            }
+            .miji-description, .nanami-description{
+                margin-top: 10px;
+                width: 98%;
+                background-image: none;
+                background-color:#DCF8C6;
+                border-radius: 40px;
+                display: flex;
+                align-content: center;
+                
+            }
+
+              .nanami img, .miji img{
+                margin-top: 10px;
+                min-width: 160px;
+                width: 50%;
+                border-radius: 200px;
+                border: 3px solid #7689f3; 
+
+                transition-property: border;
+                transition-duration: 100ms;
+                transition-timing-function: ease;
+                transition-delay: 0s;
+            }
+            .nanami img:hover, .miji img:hover{
+                border: 8px solid #7689f3;
+            }
+            @keyframes scrolling{
+                from{
+                    scale: 0;
+                }
+                to{
+                    opacity: 1;
+                    scale: 1;
+                }
+            }
+            @keyframes scrolling2{
+                from{
+                    scale: 0;
+                }
+                to{
+                    opacity: 1;
+                    scale: 1;
+                }
+              
+            }
+
+            h3{
+                color:#5682be !important;
+            }
+            #sns{
+                width:100%;
+                transform: translateY(350px);
+                margin: 0 !important; 
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height:100px;
+            }
+            .y,.i{
+                padding: 15px;
+                font-weight:350;
+                color: black !important;
+                text-decoration: none;
+            }
+            .box-1, .box-2{
+                margin: 0;
+                padding: 0;
+                display: block;
+                text-align: center;
+                width: 50%;
+                height: 100%;    
+            }
+            .box-1{
+                border-right: 1px solid #000;
+            }
+            .google-form{
+                display: block;
+                text-align: center;
+                background-color: #eee6fff6;
+                margin: 50px;
+                margin-top: 0px !important;
+                padding: 10px;
+                border: 10px solid #cad2ff;
+                border-radius: 10px;
+            }
+
+@media screen and (max-width: 700px) {
+        /*.nanami-description, .miji-description{
+            display: none !important;
+        }*/
+        iframe{
+            width: 90% !important;
+        }
+        #leaders{
+            position: relative;
+            margin-top: 50px;
+            min-width: 315px;
+            width: 90%;
+            height: 720px;
+            overflow: hidden;
+            align-items: center;
+            display: flex !important;
+        }
+        .slide{
+            position: absolute;
+
+        }
+        .slide-2 {
+         visibility: hidden;
+        }
+        .slide-1 {
+            visibility: visible;
+        }
+
+        .nanami, .miji {
+            width: 100% !important;
+            flex-shrink: 0;
+        }
+
+        .nanami img,
+        .miji img {
+            width: 300px;
+        }
+
+        .slider{
+            position: absolute;
+            padding: 1.5rem 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            z-index: 999;
+
+        }
+        [aria-label="right"]{
+            visibility: visible;
+        }
+        [aria-label="left"]{
+            visibility: hidden;
+        }
+
+
+}
+@media screen and (min-width: 701px){
+    .slider{
+        display: none;
+    }
+    .slide-1,.slide-2{
+        display: block;
+        position: relative;
+        visibility: visible !important;
+    }
+      .nanami:hover .nanami-description::after{
+                scale: 5.3;
+                opacity: 1;
+                top: 50%;
+            }
+         .miji:hover .miji-description::after{
+                scale: 5.3;
+                opacity: 1;
+                top: 50%;
+            }
+
+}
+            .i:hover{
+               text-decoration: underline;
+            }
+            .y:hover{
+               text-decoration: underline;
+            }
+             @media screen and (max-width: 766px){
+                #social i{
+                    margin: 3px;
+                }
+            }
+             @media screen and (min-width: 990px){
+                .nanami:hover .nanami-description::after{
+                scale: 5.3;
+                top: 57%;
+                opacity: 1;
+            }
+         .miji:hover .miji-description::after{
+                scale: 5.3 ;
+                top: 57%;
+                opacity: 1;
+            }
+
+            }
+            @media screen and (min-width: 1280px){
+                .nanami:hover .nanami-description::after{
+                scale: 5.3;
+                top: 64%;
+                opacity: 1;
+            }
+         .miji:hover .miji-description::after{
+                scale: 5.3 ;
+                top: 64%;
+                opacity: 1;
+            }
+
+            }
+
+            
+
+
+
+
+
+        </style>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <title>BHS Popcorn Club</title>
+    </head>
+    <body style="background-color:  #cbddff;">
+         <header id = "header">
+            <nav class="header-content navbar navbar-expand-md" role="navigation">
+                <a href = "homepage.html" class = "branding" aria-label = "Popcorn Club logo that links to the homepage">
+                    <span class = "screen-reader-text">Popcorn Club</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" style="margin-right:20px;">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <ul class="navbar-nav">
+                        <li><a class="nav-link" href="highlights.html">Highlights</a></li>
+                        <li><a class="nav-link" href="calender.html">Calender</a></li>
+                        <li><a class="nav-link" href="aboutUs.html">About Us</a></li>
+                    </ul> 
+                    <!-- Social Media Links -->
+                    <section id="social" role="list" class="ms-auto d-flex align-items-center">
+                        <a href="https://www.instagram.com/bhspopcorn/" target="_blank">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@BhsPopcornn/" target="_blank">
+                            <i class="bi bi-youtube"></i>
+                        </a>
+                    </section>
+               </div>
+            </nav>   
+        </header>
+      <div class = "main" style="min-height: 3200px;">
+        <div class="title">
+             <h1 class="aboutUs">
+                - About Us -
+             </h1>
+        </div>
+        <div class="content">
+            <section id="go-video">
+                <video controls muted autoplay><source src = "video.mp4" type = "video/mp4"></video>
+               <section class="description">
+                <p>Established in 2012, Popcorn club is a student-led club which aims to spread k-pop culture and engage students who are passionate about k-pop. The goal of this club is to encourage students building a community, enhance cooperation and communication skills, gain the leadership experience by teaching other members. The club runs throughout a year, a weekly meeting/pracitce holds on every Monday and Thursday. The current club does not provide any prerequisites to join the club, and all students are welcome! </p>
+                <p class="video-description">the video taken during the 2026 K-night at Lexington High School. The video plays the performance of "GO" by Cortis, performed by Nanami, Young, Natsuki, Seyoung, and Kiki.</p>
+               </section>
+            </section>
+             <h2>meet our 2026-2027 leaders!</h2>
+            <section id="leaders">
+                <div class="nanami slide slide-1">
+                    <a href="https://www.instagram.com/7mi.kai?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+                   <img src="nanami.jpg">
+                   </a>
+                   <h3 style="margin: 30px">Nanami Kai</h3>
+                   <div class="nanami-description">
+                    <p>
+                        <br>Nanami is an awsome dancer who prevails a singinicant dance competition in the U.S. Her skill and talent are really promising to lead our club to a next level🕺🕺 Her dance move is elegant and yet powerful🔥 ...so please stay tuned😉</br>
+                        <br>Her favorite k-pop group:</br>
+                        <br>Her favorite k-pop song:</br>
+                        <br>Her favorite k-pop artist:</br>
+                    </p>
+                   </div>
+                </div>
+                 <a href="https://www.instagram.com/shimmiji?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+                 <div class="miji slide slide-2">
+                   <img src="miji.jpg">
+                </a>
+                   <h3 style="margin: 30px">Miji</h3>
+                   <div class="miji-description">
+                    <p>
+                        <br>While Miji was in Korea, she had danced variety of dances! Her presence would influence our club with a lot of novelity. Her elegancy of her dance was culminated through ice skating, and oh my god... you can't leave your eyes from her😳</br>
+                        <br>Her favorite k-pop group: Aespa</br>
+                        <br>Her favorite k-pop song:</br>
+                        <br>Her favorite k-pop artist:</br>
+                    </p>
+                   </div>
+                </div>
+                 <ul class="slider" style="visibility: hidden;">
+                    <li aria-label = "left" onclick="slideToLeft(event)"><i class="bi bi-arrow-left"></i></li>
+                    <li aria-label = "right" onclick="slideToRight(event)"><i class="bi bi-arrow-right"></i></li>
+                </ul>
+            </section>
+            <section id="request">
+                <div id="heading">
+                <h2>Please fill out the form below to request any songs that you would like to see us performing:D</h2>
+                <h3 style="padding: 10px; margin-top: 10px;">**In order to access the form, you must sign in with your BHS school account.**</h3>
+                </div>
+            <div class="google-form" style="margin-top: 100px ;transform: translateY(50px)">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf1SIE2Up2w2BTP-zQfa8G7cuIf7Pv1jRXPJzRLQmkoKfSlZA/viewform?embedded=true" width="640" height="1078" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+            </div>
+            </section>
+        </div>
+        </div>
+        <section id="sns"  style="border: 10px solid transparent;">
+                <div class="box-1">
+                    <a href="https://www.youtube.com/@BhsPopcornn/" target="_blank" style="text-decoration: none;">
+                    <h4 class="y">more videos on youtube...</h4>
+                    </a>
+                </div>
+                <div class="box-2">
+                 <a href="https://www.instagram.com/bhspopcorn/" target="_blank" style="text-decoration: none;">
+                 <h4 class="i">please visit our instagram account!</h4>
+                 </a>
+                </div>
+        </section>
+           <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+            <script src="gsap.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
+            <script src="gsap.js"></script>
+            <script src="aboutUs.js"></script>
+    </body>
+</html>
