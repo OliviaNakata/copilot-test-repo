@@ -156,6 +156,7 @@
                     margin: 3px;
                 }
             }
+          
              #sns{
                 width:100%;
                 transform: translateY(250px);
@@ -181,18 +182,27 @@
             .content{
                 display: inline-block;
                 min-height: 100vh;
-                padding: 10px;
+                padding: 20px;
                 margin-top: 60px;
                 /*border: 10px solid #000;*/
-                width: 95%;
+                width: 100%;
             }
-            .event1{/*add more events*/
+             .event1{/*add more events*/
                 width: 400px;
                 height: 500px;
                 margin-right: 10px;
                 background-color:#f4d587;
                 border: 5px solid #ff8c2e;
                 border-radius: 10px;
+            }
+              @media screen and (max-width: 800px){
+                .content{
+                    display: block;
+                }
+                .event1{
+                    margin: 0 auto;
+
+                }
             }
             .powderpuff-audition{    
                 display: block;
