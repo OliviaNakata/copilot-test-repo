@@ -110,7 +110,7 @@
                 transform: translate(0%, 90%);
 
             }
-            h2, h4{
+            h2, h3, h4{
                 font-family: 'Fredoka', sans-serif;
                 text-align: center;
                 display: block;
@@ -135,13 +135,14 @@
                 font-size: 20px !important;
                 margin-right: 50px;
                 margin-left: 50px;
-                color: #ff8c2e !important;
+            }
+            h3, h2 {
+                 color: #ff8c2e !important;
             }
             .content{
                 display: block;
                 transform: translateY(80px);
-                margin: 50px;
-                padding:0px;
+                padding:20px;
             }
             .list{
                 font-weight: bold;
@@ -177,9 +178,39 @@
             .box-1{
                 border-right: 1px solid #000;
             }
-            .events{
-                display: block;
+            .content{
+                display: inline-block;
                 min-height: 100vh;
+                padding: 10px;
+                margin-top: 60px;
+                /*border: 10px solid #000;*/
+                width: 95%;
+            }
+            .event1{/*add more events*/
+                width: 400px;
+                height: 500px;
+                margin-right: 10px;
+                background-color:#f4d587;
+                border: 5px solid #ff8c2e;
+                border-radius: 10px;
+            }
+            .powderpuff-audition{    
+                display: block;
+                text-align: center;
+                margin-top: 10px;
+                /*border: 10px solid #000;*/
+                }
+            .con-title{
+                width: 100%;
+                padding: 10px;
+                margin-top: 5px;
+            }
+            p{
+                font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, sans-serif;
+                color:#000;
+            }
+            img{
+                width: 300px;
             }
 
 
@@ -226,9 +257,17 @@
             </h2>
         </div>
         <div class="content">
-            <ul class="events">
-                <li class = "list">there's no upcoming event yet.</li>
-            </ul>
+           
+            <section class="event1">
+                 <a href="pow-audition.html" style="text-decoration: none">
+                <span class="powderpuff-audition">
+                    <img src="audition.jpg">
+                    <h3 class="con-title">Powderpuff audition is now open!!!</h3>
+                    <p class="con-title">click the box to learn more</p>
+                </span>
+                </a>
+            </section>
+            
         </div>
         </div>
           <section id="sns" style="border: 10px solid #ffffff00; background-color:transparent">
@@ -251,8 +290,3 @@
             <script src="gsap.js"></script>
     </body>
 </html>
-          
-      
-
-
-    
