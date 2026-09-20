@@ -219,7 +219,13 @@
                 transition: 0.4s ease-in;
             }
   /* 2. THE TRAIN: Force-clearing all Bootstrap default paddings and margins */
-           
+           html, body {
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+            }
+
+
              @keyframes slides{
                 0%{
                     transform: translateX(0%);
@@ -253,6 +259,11 @@
 
                 
             }
+            #tubular-container {
+                width: 100vw;
+                height: 100dvh;
+                overflow: hidden;
+            }
 
 /* 3. THE TRAIN CARS: Make sure the container holds its ground */
             .carousel-track li {
@@ -263,6 +274,7 @@
 
                 margin: 0;
                 padding: 0;
+
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -271,9 +283,9 @@
 
             /* 4. THE IMAGES: Absolute centring lock */
             #tubular-image {
-                border: 1px solid #fff;
+                border-right: 1px solid #fff;
                 width: 100vw;
-                height: 100vh;
+                height: 100dvh;
                 object-fit: cover !important;             
                 object-position: center center !important; 
                 opacity: 0.6;
@@ -327,7 +339,7 @@
         </div>
         <header id = "header">
             <nav class="header-content navbar navbar-expand-md" role="navigation">
-                <a href = "index.html" class = "branding" aria-label = "Popcorn Club logo that links to the homepage">
+                <a href = "homepage.html" class = "branding" aria-label = "Popcorn Club logo that links to the homepage">
                     <span class = "screen-reader-text">Popcorn Club</span>
                 </a>
                 <div class=" navbar-collapse" id="navbarNavAltMarkup">
