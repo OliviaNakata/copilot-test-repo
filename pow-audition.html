@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <!-- Add these Google Font links -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    
+        <!-- Add Bootstrap Icons stylesheet -->
+       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+      
+        <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+             @font-face { 
+            font-family: 'Norwester'; 
+            font-style: normal; 
+            font-weight: 400; 
+            src: url(https://cdn.jsdelivr.net/fontsource/fonts/norwester@latest/latin-400-normal.woff2) format('woff2'), 
+                 url(https://cdn.jsdelivr.net/fontsource/fonts/norwester@latest/latin-400-normal.woff) format('woff'); 
+             }
+
+            #header {
+                position: fixed;
+                top: 0;
+                width: 100%;
+                height: 90px;
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+                z-index: 2000;
+            }
+            .header-content {
+                width: 100%;
+                height: auto;
+                background: transparent;
+                padding: 10px 0 0 0;
+            }
+            .screen-reader-text {
+                border: 0;
+                clip: rect(1px, 1px, 1px, 1px);
+                clip-path: inset(50%);
+                height: 1px;
+                margin: -1px;
+                overflow: hidden;
+                padding: 0;
+                position: absolute !important;
+                width: 1px;
+                word-wrap: normal  !important;
+                word-break: normal;
+            }
+            .branding{
+                height: 60px;
+                width: 60px;
+                background-color: transparent;
+                display: inline-block;
+                background-image: url('logo.png');
+                background-size: contain; 
+                background-position: center;
+                margin: 10px;
+                background-repeat: no-repeat;
+
+            }
+          .navbar-nav .nav-link{
+            font-family: 'Fredoka', sans-serif; /* Change to your preferred font */
+            font-weight: 900;
+            margin-left: 20px
+            }
+            .navbar-nav, #social, #header{
+               background-color: transparent;
+            }
+            #social i, .navbar-nav, .nav-link{
+                color: black !important;
+            }
+            #social #header{
+                float: none;
+                display: block;
+            }
+            #social{
+                padding: 10px;
+                margin-right: 3px;
+            }
+            #social i{
+                padding: 3px;
+                margin: 3px 20px 1px;
+                font-size: 2rem;
+            }
+            #social a {
+                 text-decoration: none; /* This removes the underline! */
+            }
+            .header-links {
+                display: inline-block;
+                text-align: right;
+                margin: 0;
+            }
+            .main{
+                margin: 0;
+                padding: 0;
+                border: 0;
+                font: inherit;
+                vertical-align: baseline;
+                bottom: 0; 
+                left: 0; 
+                right: 0; 
+                top: 0;
+            }
+             .title{
+                width: 100%;
+                transform: translate(0%, 90%);
+
+            }
+            h2,h3, h4{
+                font-family: 'Fredoka', sans-serif;
+            }
+            
+            h1, h5, h6{
+                font-family: 'Norwester', 'Arial Black', sans-serif;   
+            }
+            h1{  font-size: 45px !important; 
+                margin: 30px;
+                padding: 10px;
+                 text-align: center;
+                display: block;
+            }
+            h5{
+                color:#ff8000c6 !important;
+                font-size:160px !important;
+                overflow-x: hidden;
+                /*font-weight:bold !important;*/
+                z-index: -10000;
+                letter-spacing: -2px;
+            }
+
+            .calender{
+                font-weight: bold;
+                background-image:
+                    radial-gradient(closest-corner circle at 28% 42%, #ff8c2e, #facc33) !important;
+                background-clip: text;
+                color: transparent !important;
+            }
+            h2{
+                font-size: 20px !important;
+                margin-right: 50px;
+                margin-left: 50px;
+                text-align: center;
+                display: block;
+            }
+            h3, h2 {
+                 color: #ff8c2e !important;
+            }
+            h3{
+                display: block;
+                text-align: center;
+                margin: 30px !important;
+                font-size: 40px !important;
+                font-weight: bolder !important;
+            }
+            h6{
+                font-size: 20px !important;
+                color:#b95300 !important;
+            }
+            .content{
+                display: block;
+                transform: translateY(80px);
+                padding:20px;
+                width: 100%;
+                padding: 50px;
+            }
+            .list{
+                font-weight: bold;
+                font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, sans-serif;
+                text-align: left;
+                font-size: 130%;
+                display: block;
+            }
+             @media screen and (max-width: 766px){
+                #social i{
+                    margin: 3px;
+                }
+            }
+             #sns{
+                width:100%;
+                transform: translateY(250px);
+                margin: 0 !important; 
+                display: flex;
+            }
+             .y,.i{
+                padding: 15px;
+                font-weight: 350;
+                text-decoration: none;
+            }
+            .box-1, .box-2{
+                margin: 0;
+                padding: 0;
+                display: block;
+                text-align: center;
+                width: 50%;
+                height: 100%;    
+            }
+            .box-1{
+                border-right: 1px solid #000;
+            }
+            .content{
+                display: inline-block;
+                min-height: 280vh;
+                padding: 10px;
+                margin-top: 60px;
+                overflow-x: hidden;
+                /*border: 10px solid #000;*/
+            }
+            .event1{/*add more events*/
+                width: 400px;
+                height: 500px;
+                margin-right: 10px;
+                background-color:#f4d587;
+                border: 5px solid #ff8c2e;
+                border-radius: 10px;
+            }
+            .powderpuff-audition{    
+                display: block;
+                text-align: center;
+                margin-top: 10px;
+                /*border: 10px solid #000;*/
+                }
+            .con-title{
+                width: 100%;
+                padding: 10px;
+                margin-top: 5px;
+            }
+            p, ol{
+                font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, sans-serif;
+                color:#000;
+                margin: 20px;
+                padding: 10px;
+            }
+            img{
+                margin: 5px;
+            }
+    
+            @keyframes fade-out{
+                from{opacity: 0}
+                to{opacity: 1}
+            }
+            .images{
+                animation-name: fade-out;
+                animation-duration: 1s;
+                animation-timing-function: linear;
+                display: flex;
+                align-content: flex-end;
+                justify-content: center;
+            }
+            @media screen and (max-width: 600px){
+                .images{
+                    margin-top: 70px;
+                }
+            }
+                @media screen and (max-width: 800px){
+                .images{
+                    margin-top: 70px;
+                }
+                .videos, .folder{
+                    width: 100% !important;
+                }
+                h1{
+                    font-size: 40px !important;
+                }
+                .content{
+                    min-height: 380vh;
+                }
+
+            }
+            .name{
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+            }
+            @keyframes left-to-right{
+                0%{
+                    transform: translateX(-200px) scaleY(1.2);
+                    opacity:0
+                }
+                30%{
+                    opacity: 0.4;
+                }
+                100%{
+                    transform: translateX(220px) scaleY(1.2);
+                    opacity:0
+                }
+            }
+            @keyframes right-to-left{
+                0%{
+                    transform: translateX(200px) scaleY(1.2);
+                    opacity:0
+                }
+                50%{
+                    opacity:0.8
+                }
+                100%{
+                    transform: translateX(-200px) scaleY(1.2);
+                    opacity:0
+                }
+            }
+
+            .left-to-right{
+                animation-name: left-to-right;
+                animation-fill-mode: backwards;
+                animation-delay: 1s;
+                animation-duration: 10s;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+            }
+            .right-to-left{
+                animation-name: right-to-left;
+                animation-duration: 9s;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+            }
+        .description{
+            padding: 50px;
+        }
+        .videos, .folder{
+           display: flex;
+           justify-content:center;
+           align-items: center;
+           height: 100px;
+           width: 50%;
+           background-color:#fbebc1;
+           border: 5px solid #ff8c2e98;
+           border-radius: 4px 10px 10px 4px;
+           margin: 10px auto;
+           overflow-x: hidden;
+        }
+        .folder:hover, .videos:hover{
+            background-color: #ff8c2ede;
+            color: white !important;
+        }
+        a:hover{
+            color: white !important;
+        }
+        .links-to-external{
+            display: block;
+            text-align: center;
+            /*border: 10px solid #000;*/
+            margin: 20px;
+
+        }
+           
+
+
+
+
+        </style>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <title>BHS Popcorn Club</title>
+    </head>
+    <body style="background-color:  #fce3a2; margin:0; padding:0;">
+         <header id = "header" style = "top: 0px;">
+            <nav class="header-content navbar navbar-expand-md" role="navigation">
+                <a href = "index.html" class = "branding" aria-label = "Popcorn Club logo that links to the homepage">
+                    <span class = "screen-reader-text">Popcorn Club</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" style="margin-right:20px;">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <ul class="navbar-nav">
+                        <li><a class="nav-link" href="highlights.html">Highlights</a></li>
+                        <li><a class="nav-link" href="calender.html">Calender</a></li>
+                        <li><a class="nav-link" href="aboutUs.html">About Us</a></li>
+                    </ul> 
+                    <!-- Social Media Links -->
+                    <section id="social" role="list" class="ms-auto d-flex align-items-center">
+                        <a href="https://www.instagram.com/bhspopcorn/" target="_blank">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@BhsPopcornn/" target="_blank">
+                            <i class="bi bi-youtube"></i>
+                        </a>
+                    </section>
+               </div>
+            </nav>   
+        </header>
+        <div class = "main">
+        <div class="title">
+             <h1 class="calender">
+                - POWDERPUFF AUDITION IS NOW OPEN -
+             </h1>
+            <h2 class="year">
+                2026 September 17 - September 24
+            </h2>
+        </div>
+        <div class="content">
+            <section class="images">
+                <section class="name">
+                <h5 class="left-to-right">DEAR</h5>
+                <h5 class="right-to-left"> GOD</h5>
+                </section>
+                <img src="deargod.jpg">
+                <img src="leakit.png">
+                <section class="name">
+                <h5 class="left-to-right">LEAK </h5>
+                <h5 class="right-to-left">IT</h5>
+                </section>
+            </section>
+            <section class="description">
+                <p>Interested to involve in our community? Start from here -> We have a HUGE announcement to all of BHS students! The Powderpuff audition application is now open, and we want to invite all of the BHS students who are passionate about dance or kpop to this project!! This year, we will perform "Leak it" by FLO, "Greedy" and "Dear God" by Tate McRae. Indeed, this is not a kpop, but the chreography is created from prominent Korean professional dancers: "Dear God" is chreographied by ROSHE (from <a href="https://www.instagram.com/justjerkacademy/?utm_source=ig_web_button_share_sheet" style="color:#000">@justjerkacademy</a>), and "Greedy" is chreographied by Harimu (from <a href="https://www.instagram.com/1milliondance/?utm_source=ig_web_button_share_sheet" style="color:#000">@1milliondance</a>). Last but not least, "Leak it" is chreographied by Nakyung (also from <a href="https://www.instagram.com/1milliondance/?utm_source=ig_web_button_share_sheet" style="color: black">@1milliondance</a>), which is going to be our biggest finale at powderpuff!!!</p>
+                <p>Again, Powderpuff is one of the biggest traditional event at BHS! You have to be comfortable enough to perform in front of a whole school... Last year, a total of 28 dancers participated at Powderpuff!! This the time to discover your new talent:D </p>
+                <h3>How to Apply</h3>
+                <p>apply to our audition ASAP! The audition will be held <b style="color: rgb(183, 50, 20); font-size: 120%;">ONLY IN PERSON, Sep 24th at DANCE STUDIO 1,</b> Tappan Gym.</p>
+                <h6>Greedy (5 people in total)</h6>
+                <ul>
+                <ol>1. Take the audition of "Dear God" + "Leak It" in person on September 24 (Thursday).</ol>
+                <ol>2. The 5 <b>EXCEPTIONAL</b> dancers from "Dear God" will be chosen for "Greedy." in person on September 24 (Thursday).</ol>
+                </ul>
+                <p>**People in Greedy MUST perform "Dear God" and "Leak It"**</p>
+                <h6>Dear God (TBD)</h6>
+                <ul>
+                    <ol>1. Take the audition for "Leak It" + "Dear God."</ol>
+                </ul>
+                <p>**People in "Dear God" MUST perform "Leak It" as well.**</p>
+                <h6>Leak It (TBD)</h6>
+                <ul>
+                    <ol>1. audition for "Leak It"</ol>
+                    <ol>2. if you passed the audition, you can choose whether you participate on "Dear God" as well.</ol>
+                </ul>
+                <p>**People in "Leak It" are not required to dance other 2 performances.</p>
+                <section class="links-to-external">
+                <a href="https://drive.google.com/drive/folders/1kdRAoncSiGZ-JMzqo1Z4u_yasX2Q6gN4?usp=share_link" style="color:#b95300"><h6 class="videos" style="margin: right-end;">Please Click Here to Access The Reference Videos</h6></a>
+                <a href="https://drive.google.com/drive/folders/12E3cXV2Lr4BPlacxq7W0MF34QT7oTe5n?usp=share_link" style="color:#b95300"><h6 class="folder">this is the link to our Powderpuff Folder!!</h6></a>
+                </section>
+                <h3>Do You Have Any Question?</h3>
+                <p>Feel Free to Contact at 27kain@brooklinek12.org, or 27shimm@brooklinek12.org!!</p>
+            </section>
+            
+        </div>
+        </div>
+          <section id="sns" style="border: 10px solid #ffffff00; background-color:transparent">
+                <div class="box-1">
+                    <a href="https://www.youtube.com/@BhsPopcornn/" target="_blank" style="text-decoration: none; color:black">
+                    <h4 class="y">more videos on youtube...</h4>
+                    </a>
+                </div>
+                <div class="box-2">
+                 <a href="https://www.instagram.com/bhspopcorn/" target="_blank" style="text-decoration: none; color:black;">
+                 <h4 class="i">please visit our instagram account!</h4>
+                 </a>
+                </div>
+            </section>
+         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
+            <script src="calender.js"></script>
+            <script src="gsap.js"></script>
+    </body>
+</html>
