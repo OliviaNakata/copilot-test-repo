@@ -18,7 +18,7 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.defaults({ease: "none", duration: 2});
 
 const tl = gsap.timeline();
-tl.from("#sns", {yPercent: 100});
+tl.from("#sns", {yPercent: 63});
 
 ScrollTrigger.create({
     animation: tl,
