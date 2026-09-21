@@ -188,12 +188,21 @@
                 width: 100%;
             }
              .event1{/*add more events*/
-                width: 400px;
+                width: 310px;
                 height: 500px;
                 margin-right: 10px;
                 background-color:#f4d587;
                 border: 5px solid #ff8c2e;
+                box-shadow: 5px 5px 0px #ff8c2e;
                 border-radius: 10px;
+            }
+            .event1:hover{
+                transition-property: transform box-shadow;
+                transition-duration: 0.5s;
+                transition-timing-function: ease;
+                transform: translate(-4px, -2px);
+                border: 5px solid #ffb070;
+                box-shadow: 9px 7px 0px #ffb070
             }
               @media screen and (max-width: 800px){
                 .content{
@@ -207,7 +216,6 @@
             .powderpuff-audition{    
                 display: block;
                 text-align: center;
-                margin-top: 10px;
                 /*border: 10px solid #000;*/
                 }
             .con-title{
@@ -221,6 +229,22 @@
             }
             img{
                 width: 300px;
+                padding: none !important;
+                margin: none !important;
+                border-radius: 5px;
+                border-bottom: 3px solid #ff8c2e98;
+            }
+            @media screen and (max-width: 340px){
+                img{
+                    width: 100%;
+                }
+                .event1{
+                    width: 98%;
+                }
+                .con-title{
+                    margin: auto;
+                }
+
             }
 
 

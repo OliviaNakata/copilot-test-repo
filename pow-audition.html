@@ -209,14 +209,6 @@
                 overflow-x: hidden;
                 /*border: 10px solid #000;*/
             }
-            .event1{/*add more events*/
-                width: 400px;
-                height: 500px;
-                margin-right: 10px;
-                background-color:#f4d587;
-                border: 5px solid #ff8c2e;
-                border-radius: 10px;
-            }
             .powderpuff-audition{    
                 display: block;
                 text-align: center;
@@ -350,7 +342,47 @@
             margin: 20px;
 
         }
+        @keyframes leakit{
+            from{
+                transform: translateX(400px);
+            }
+            to{
+                transform: translateX(-700px);
+            }
+        }
+        @keyframes deargod{
+            from{
+                transform: translateX(700px);
+            }
+            to{
+                transform: translateX(-400px);
+            }
+
+        }
            
+        @media screen and (max-width: 500px){
+            .leakit{
+                animation-name: leakit;
+                animation-delay: 4.5s;
+                animation-fill-mode: both;
+                animation-duration: 11s;
+                 animation-timing-function: linear;
+                animation-iteration-count: infinite;
+                border-radius: 10px;
+            }
+
+            .deargod{
+                animation-name: deargod;
+                animation-duration: 11s;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+                border-radius: 10px;
+            }
+            .images{
+                border-bottom: 2px solid #e96016;
+                border-top: 2px solid #e96016;
+            }
+        }
 
 
 
@@ -401,8 +433,8 @@
                 <h5 class="left-to-right">DEAR</h5>
                 <h5 class="right-to-left"> GOD</h5>
                 </section>
-                <img src="deargod.jpg">
-                <img src="leakit.png">
+                <img class="deargod" src="deargod.jpg">
+                <img class="leakit" src="leakit.png">
                 <section class="name">
                 <h5 class="left-to-right">LEAK </h5>
                 <h5 class="right-to-left">IT</h5>
@@ -440,10 +472,23 @@
             
         </div>
         </div>
+          <section id="sns" style="border: 10px solid #ffffff00; background-color:transparent">
+                <div class="box-1">
+                    <a href="https://www.youtube.com/@BhsPopcornn/" target="_blank" style="text-decoration: none; color:black">
+                    <h4 class="y">more videos on youtube...</h4>
+                    </a>
+                </div>
+                <div class="box-2">
+                 <a href="https://www.instagram.com/bhspopcorn/" target="_blank" style="text-decoration: none; color:black;">
+                 <h4 class="i">please visit our instagram account!</h4>
+                 </a>
+                </div>
+            </section>
          <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
             <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
             <script src="calender.js"></script>
+            <script src="gsap.js"></script>
     </body>
 </html>
